@@ -1,14 +1,17 @@
-<div>
+<div *ngIf='isUserLogedIn' >
     <nav>
         <ul>
             <li>
-                <a routerLink='login'>Login</a>
+                <a routerLink='home'  routerLinkActive="active">Home</a>
             </li>
             <li>
-                <a routerLink='register'>Register</a>
+                <a routerLink='login'  routerLinkActive="active">Login</a>
             </li>
             <li>
-                <a routerLink='demo'>Demo</a>
+                <a routerLink='register'  routerLinkActive="active">Register</a>
+            </li>
+            <li>
+                <a routerLink='demo'  routerLinkActive="active">Demo</a>
             </li>
         </ul>
     </nav>
