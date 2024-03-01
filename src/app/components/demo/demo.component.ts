@@ -26,8 +26,8 @@ export class DemoComponent {
     this.isAddEnabled=true;
   }
   constructor(){
-    this.products.push(new Product("Dell Laptop",23000.0));
-    this.products.push(new Product("Dell monitor",10000.0));
+    this.products.push(new Product(1,"Dell Laptop",23000.0));
+    this.products.push(new Product(2,"Dell monitor",10000.0));
     
   }
   addProduct(){
