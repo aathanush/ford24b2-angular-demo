@@ -1,0 +1,104 @@
+<p>demo works!</p>
+
+
+<h1>Welcome to Angular App</h1>
+<div>
+    <!-- interpolation -->
+    <h3>Interpolation eg. </h3>
+    <p>{{title}}</p>
+    <p>{{fruits[0]}}</p>
+    <p>{{product.name}}</p>
+</div>
+<div>
+    <h3>property binding : [] </h3>
+
+    <img [src]="imageUrl" alt="image name">
+    <button [disabled]="isDisabled"> Click !</button>
+
+    <h3>Event binding : ()</h3>
+
+    <button (click)="clickHandler()">Log</button>
+
+    <button (click)="toggleButton()">Toggle</button>
+
+</div>
+<div>
+    <h3>Two way data binding [()]</h3>
+    <form>
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="name" [(ngModel)]="userName">
+
+
+        <button (click)="addName()">Add</button>
+        <button (click)="clearName()">Clear</button>
+    </form>
+</div>
+
+<div>
+    <h3>Angular directives *ngIf</h3>
+    <div *ngIf="title">{{title}} :Product description...</div>
+
+    <div *ngIf="newProduct">
+
+        {{newProduct.name}}
+        {{newProduct.price}}
+    </div>
+
+    <img *ngIf="imageUrl" [src]="imageUrl" alt="image name" height="50px" width="50px">
+
+</div>
+
+<div>
+    <h3> Angular *ngFor</h3>
+    <p *ngFor="let fruit of fruits; let i = index">
+        {{i+1}} {{fruit}}
+    </p>
+</div>
+<div class="grid-container">
+
+    <div>
+        <h3>Product details:</h3>
+        <h6 *ngIf="products.length<1">
+            No Products found! </h6>
+
+        <table *ngIf="products.length>0">
+            <tr>
+                <th>Sl no</th>
+                <th>Name</th>
+                <th>Price</th>
+            </tr>
+            <tr *ngFor="let product of products;let i = index">
+                <td>{{i}}</td>
+                <td>{{product.name}}</td>
+                <td>{{product.price}}</td>
+            </tr>
+        </table>
+        <button (click)="enableAddProduct()">Add New Product</button>
+    </div>
+    <div *ngIf="isAddEnabled">
+        <h3>Add new Product:</h3>
+        <form>
+            <label for="name">Name:</label><br>
+            <input type="text" id="name" name="name" [(ngModel)]="newProduct.name">
+            <br>
+            <label for="price">Price:</label><br>
+            <input type="text" id="price" name="price" [(ngModel)]="newProduct.price">
+
+            <button (click)="addProduct()">Add</button>
+
+        </form>
+    </div>
+</div>
+
+<div>
+    <h3> *ngSwitch</h3>
+    <div [ngSwitch]="choice">
+        <p *ngSwitchCase="1">Para 1</p>
+        <p *ngSwitchCase="2">Para 2</p>
+        <p *ngSwitchCase="3">Para 3</p>
+
+        <p *ngSwitchDefault>Default Para...</p>
+    </div>
+    <label for="choice">Choice:</label>
+    <input type="number" name="choice" [(ngModel)]="choice">
+</div>
