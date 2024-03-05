@@ -13,18 +13,26 @@ import { CommonModule } from '@angular/common';
 export class DisplayAccountsComponent {
 
   accounts: Account[] = [];
+
+  message:string="";
+  errorMessage:string="";
+
   constructor(private accountService: AccountService) {
     this.accountService.getAllAccount().subscribe(
       {
         next: (data) => {
           console.log(data);
           this.accounts = data;
+         
         },
         error: (err) => {
           console.log(err);
+          this.errorMessage="Could't Load Accounts";
+          this.message="";
         },
         complete: () => {
           console.log("Server completed sending data.");
+
         }
       }
     )

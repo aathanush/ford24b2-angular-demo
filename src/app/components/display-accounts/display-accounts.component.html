@@ -2,6 +2,13 @@
 
 <div>
     <h3>Display All Accounts: </h3>
+    <div *ngIf="message">
+        <p> {{message}}</p>
+    </div>
+    <div *ngIf="errorMessage">
+        <p> {{errorMessage}}</p>
+    </div>
+    
     <h3 *ngIf="accounts.length <1"> No accounts Found.</h3>
     <table *ngIf="accounts.length>0">
         <thead>

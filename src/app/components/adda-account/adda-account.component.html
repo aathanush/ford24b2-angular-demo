@@ -1,0 +1,26 @@
+<p>adda-account works!</p>
+
+<div>
+    <h3> Add new Account:</h3>
+    <div *ngIf="message" class="alert alert-success">
+        <p> {{message}}</p>
+    </div>
+    <div *ngIf="errorMessage" class="alert alert-danger">
+        <p> {{errorMessage}}</p>
+    </div>
+    <form>
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" [(ngModel)]="newAccount.name">
+
+        <label for="amount">Amount</label>
+        <input type="number" id="amount" name="amount" [(ngModel)]="newAccount.amount">
+       
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" [(ngModel)]="newAccount.email">
+       
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" [(ngModel)]="newAccount.password">
+
+        <button (click)="addAccount()" class="btn btn-success">Add Account</button>
+    </form>
+</div>
