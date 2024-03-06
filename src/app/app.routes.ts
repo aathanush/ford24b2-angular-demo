@@ -10,6 +10,7 @@ import { LoginComponent } from './components/login/login.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { ProductsComponent } from './components/products/products.component';
 import { RegisterComponent } from './components/register/register.component';
+import { UpdateAccountComponent } from './components/update-account/update-account.component';
 
 export const routes: Routes = [
     { path: 'login', component: LoginComponent },
@@ -20,6 +21,8 @@ export const routes: Routes = [
     {path:'details/:id',component:DetailsComponent},
     {path:'accounts',component:DisplayAccountsComponent},
     {path:'account',component:AddaAccountComponent},    
+    {path:'update-account/:id',component:UpdateAccountComponent},    
+    
     {path:'c1',component:C1Component},
     {path:'c2',component:C2Component},
     { path: '', redirectTo: 'home', pathMatch:'full' },

@@ -10,6 +10,7 @@ import { ActivatedRoute } from '@angular/router';
 export class DetailsComponent {
 id?:any;
   constructor(private activeRoute:ActivatedRoute){
+    
     this.id = this.activeRoute.snapshot.paramMap.get('id');
   console.log("display details of product id :"+this.id);    
   }
