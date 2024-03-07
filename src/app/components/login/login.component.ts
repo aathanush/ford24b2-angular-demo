@@ -9,4 +9,23 @@ import { Component } from '@angular/core';
 })
 export class LoginComponent {
 
+  login() {
+
+    // subscribe login api
+    // inside next call back
+    let user = { name: "ford", role: "user" };
+    localStorage.setItem("user", JSON.stringify(user));
+
+  }
+  adminLogin() {
+
+    // subscribe login api
+    // inside next call back
+    let user = { name: "ford", role: "admin" };
+    localStorage.setItem("user", JSON.stringify(user));
+
+  }
+  logout() {
+    localStorage.clear();
+  }
 }
